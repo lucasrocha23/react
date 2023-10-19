@@ -5,19 +5,19 @@ Projeto com intuito de aplicar na pratica os conhecimentos sobre react
 O projeto se trata de um gerenciador de projetos, em que o usuário pode criar novos projetos, excluí-los e editá-los, como também adicionar serviços a um projeto, salvando os dados em um banco de dados local, um arquivo json, através de comunicação via API. a seguir temos algumas imagens do Costs
 
 ### Tela home
-![costs-home](https://github.com/lucasrocha23/projeto-costs-react/assets/31346425/007c5dde-6234-41a3-8695-00a95f69036f)
+![costs-home](https://github.com/lucasrocha23/react/assets/31346425/c93a360a-3a90-494b-bcde-f6a30e8a75ef)
 
 ### Tela criar projetos
-![costs-criarProjeto](https://github.com/lucasrocha23/projeto-costs-react/assets/31346425/4ae1d10a-a632-41e0-9b63-0f21992fa2f2)
+![costs-criarProjeto](https://github.com/lucasrocha23/react/assets/31346425/6de0e761-39ea-4f26-bb7b-3caf59166343)
 
 ### Tela projetos
-![costs-projetos](https://github.com/lucasrocha23/projeto-costs-react/assets/31346425/cd85b979-bffc-4aa4-8c0f-c816aaa53068)
+![costs-projetos](https://github.com/lucasrocha23/react/assets/31346425/33984b06-7328-4b94-87f8-4bfa46a69d92)
 
 ### Tela editar projeto
-![costs-editarProjeto](https://github.com/lucasrocha23/projeto-costs-react/assets/31346425/183c5857-5081-424b-8073-2e6a815ca50c)
+![costs-editarProjeto](https://github.com/lucasrocha23/react/assets/31346425/90e08932-3442-41c2-932b-7855a1c3a8ed)
 
 ### Tela editar projeto e adicionar serviços
-![costs-editar-addServiços](https://github.com/lucasrocha23/projeto-costs-react/assets/31346425/c1857566-b9d3-4dce-8548-80d66e75d5c0)
+![costs-editar-addServiços](https://github.com/lucasrocha23/react/assets/31346425/8bd5f8b6-f07f-4b0b-9c84-c480c51181eb)
 
 ## Comandos
 
