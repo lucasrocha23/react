@@ -1,0 +1,87 @@
+.card_projeto{
+    padding: 1em;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    width: 24%;
+    margin: 0.5%;
+}
+
+.card_projeto h4{
+    background-color: #222;
+    color: #FFBB33;
+    padding: .4em;
+    margin-bottom: 1.3em;
+    font-size: 1.3em;
+}
+
+.card_projeto p{
+    color: #7a7a7a;
+    margin-bottom: 1em;
+}
+
+.card_projeto p span{
+    font-weight: bold;
+}
+
+.texto_categoria{
+    display: flex;
+    align-items: center;
+}
+
+.texto_categoria span{
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #CCC;
+    margin-right: 5px;
+}
+
+.texto_categoria .infra{
+    background-color: #ffaebc;
+}
+
+.texto_categoria .desenvolvimento{
+    background-color: #a0e7e5;
+}
+
+.texto_categoria .design{
+    background-color: #b4f8c8;
+}
+
+.texto_categoria .planejamento{
+    background-color: #fbe7c6;
+}
+
+.card_projeto_açoes{
+    margin-top: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+.card_projeto_açoes a, .card_projeto_açoes button{
+    text-decoration: none;
+    border: 1px solid #222;
+    background-color: #fff;
+    color: #222;
+    font-size: 0.9em;
+    padding:  0.6em 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.card_projeto_açoes svg{
+    margin-right:  0.5em;
+}
+
+.card_projeto_açoes a:hover, .card_projeto_açoes button:hover{
+    background-color: #222;
+    color: #FFBB33;
+}
+
+
+

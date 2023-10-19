@@ -1,0 +1,11 @@
+.container_projeto{
+    width: 100vw;
+    padding: 2em 0em;
+    /* background-color: brown; */
+}
+
+.container_titulo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}

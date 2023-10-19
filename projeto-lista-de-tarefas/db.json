@@ -1,0 +1,28 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Colocar comida para o cachorro",
+      "categoria": "Pessoal",
+      "completo": false
+    },
+    {
+      "id": 2,
+      "titulo": "Colocar lixo para fora",
+      "categoria": "Pessoal",
+      "completo": false
+    },
+    {
+      "id": 3,
+      "titulo": "Aprender React",
+      "categoria": "Estudo",
+      "completo": false
+    },
+    {
+      "id": 2580,
+      "titulo": "Soltar o gato",
+      "categoria": "pessoal",
+      "completo": true
+    }
+  ]
+}

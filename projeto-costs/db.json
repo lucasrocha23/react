@@ -1,0 +1,70 @@
+{
+  "projetos": [
+    {
+      "nome": "novo projeto",
+      "orçamento": "6000",
+      "categoria": {
+        "id": "1",
+        "nome": "Infra"
+      },
+      "custo": 3000,
+      "servicos": [
+        {
+          "nome": "novo serviço ",
+          "custo": "2000",
+          "descriçao": "novo serviço descricao",
+          "id": "bbcd93bf-0dc3-44d5-ad4d-737f70a37f72"
+        },
+        {
+          "nome": "novo serviço 2",
+          "custo": "500",
+          "descriçao": "novo serviço 2 descricao 2",
+          "id": "e6a91f02-2bf6-428c-a543-ace1286186f9"
+        },
+        {
+          "nome": "novo serviço 3",
+          "custo": "500",
+          "descriçao": "novo serviço 3 descricao 3",
+          "id": "70b2bfde-0b3d-471e-8011-d562ac185c2d"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "nome": "novo projeto 2",
+      "orçamento": "6000",
+      "categoria": {
+        "id": "2",
+        "nome": "Design"
+      },
+      "custo": 500,
+      "servicos": [
+        {
+          "nome": "novo serviço",
+          "custo": "500",
+          "descriçao": "novo serviço descricao",
+          "id": "6e7afa5e-2bc9-4caa-af00-850062eeee85"
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Infra"
+    },
+    {
+      "id": 2,
+      "nome": "Design"
+    },
+    {
+      "id": 3,
+      "nome": "Desenvolvimento"
+    },
+    {
+      "id": 4,
+      "nome": "Planejamento"
+    }
+  ]
+}

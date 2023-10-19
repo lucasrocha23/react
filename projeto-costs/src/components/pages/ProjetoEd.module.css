@@ -1,0 +1,50 @@
+.detalhes_projeto{
+    width: 100%;
+    padding: 2em;
+}
+
+.detalhes_projeto h1,
+.detalhes_projeto h2,
+.detalhes_projeto p{
+    margin-bottom: 0.5em;
+}
+
+.detalhes_projeto h1{
+    background-color: #222;
+    color: #ffbb33;
+    padding: 0.4em;
+}
+
+.detalhes_projeto span{
+    font-weight: bold;
+}
+
+.detalhes_container,
+.serviço_form_container{
+    border-bottom: 1px solid #7a7a7a;
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btn{
+   background-color: #222;
+   color: #fff;
+   padding: 0.5em 1em;
+   text-decoration: none;
+   transition: 0.5s;
+   cursor: pointer;
+   max-height: 40px;
+   border: none;
+}
+
+.btn:hover{
+    color: #ffbb33;
+}
+
+
+.info_projeto{
+    width: 100%;
+}
