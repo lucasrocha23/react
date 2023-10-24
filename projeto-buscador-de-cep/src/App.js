@@ -2,20 +2,30 @@ import { useState } from 'react';
 import {FiSearch} from 'react-icons/fi'
 import estilos from './App.module.css'
 import Api from './serviços/Api';
+import Mensagem from './layout/Mensagem';
 
 function App() {
   const [input,setInput] = useState('')
+  const [cep, setCep] = useState('')
+  const [tipo, setTipo] = useState("")
+  const [msg, setMsg] = useState("")
 
   async function handleSearch(){
+    setTipo("")
+    setMsg("")
     if (input === ""){
       return
     }
 
     try{
       const resposta = await Api.get(`${input}/json`)
-      console.log(resposta);
+      setCep(resposta.data)
+      setInput("")
     } catch{
-
+      setInput("");
+      setCep("")
+      setTipo("falha")
+      setMsg("Erro ao tentar procurar o CEP digitaddo")
     }
   }
 
@@ -31,14 +41,19 @@ function App() {
         </button>
       </div>
 
-      <div className={estilos.main}>
-        <h2>CEP</h2>
+      <Mensagem type={tipo} msg={msg}/>
 
-        <span>Rua</span>
-        <span>Complemento</span>
-        <span>Bairro</span>
-        <span>Estado</span>
-      </div>
+      {cep && (
+        <div className={estilos.main}>
+          <h2>CEP: {cep.cep}</h2>
+
+          {cep.logradouro && (<span>{cep.logradouro}</span>)}
+          {cep.complemento && (<span>Complemento: {cep.complemento}</span>)}
+          {cep.bairro && (<span>{cep.bairro}</span>)}
+          {cep.localidade && (<span>{cep.localidade} - {cep.uf}</span>)}
+        </div>
+      )}
+        
     </div>
   );
 }
