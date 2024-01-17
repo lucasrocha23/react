@@ -5,7 +5,7 @@
     margin: 0 auto;
     flex-wrap: wrap;
     padding: 1em 2em;
-    min-height: 75%;
+    /* min-height: 75%; */
 }
 
 .start{
@@ -16,4 +16,5 @@
 .column{
     flex-direction: column;
     justify-content: flex-start;
+    background-color: red;
 }
