@@ -1,0 +1,31 @@
+.card_ficha{
+    background-color:  #d6d6d6;
+    border-radius: 5px;
+    padding: 0.7em;
+    transition: 0.5s;
+    margin-top: 0.5em;
+    padding-bottom: 0.1em;
+}
+
+.card_ficha:hover{
+    background-color: #afafaf;
+}
+
+.card_ficha h3{
+    background-color: #222;
+    color: #d6d6d6;
+    padding: .4em;
+    /* margin-bottom: 1.3em; */
+    /* border-radius: 5px 5px 0px 0px; */
+    font-size: 1.3em;
+}
+
+.card_ficha p{
+    margin: 0.5em;
+}
+
+.link{
+    text-decoration: none;
+    color: #222;
+
+}

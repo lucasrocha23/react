@@ -22,7 +22,9 @@ button{
 .pesquisa{
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -31,5 +33,8 @@ button{
     border-radius: 0;
     border: none;
     width: 100%;
-    margin-top: 1em;
+}
+
+.pesquisa input::placeholder{
+    color: #7b7b7b;
 }

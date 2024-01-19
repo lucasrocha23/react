@@ -6,6 +6,7 @@ import Fichas from './components/paginas/Fichas';
 import Pagamentos from './components/paginas/Pagamentos.js' 
 import NavBar from './components/layout/NavBar';
 import Container from './components/layout/Container';
+import Ficha from './components/paginas/Ficha.js'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/Adicionar' element={<Adicionar/>}></Route>
           <Route path='/Fichas' element={<Fichas/>}></Route>
           <Route path='/Pagamentos' element={<Pagamentos/>}></Route>
+          <Route path='/Ficha/:id' element={<Ficha/>}></Route>
         </Routes>
       </Container>
     </Router>

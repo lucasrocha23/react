@@ -8,5 +8,14 @@
 }
 
 .bt:hover{
-    color: #ffbb33;
+    color:  #ff0009;
+}
+
+.bt:disabled{
+    background-color: #646464;
+}
+
+.bt:disabled:hover{
+    color: #fff;
+    cursor: auto;
 }

@@ -28,7 +28,7 @@ function Adicionar(){
     return(
         <div className={styles.adicionar_container}>
             {mensagem && <Mensagem type={tipoMsg} msg={mensagem}/>}
-            <h2>Adicione um Cliente</h2>
+            <h2>Adicione uma Pessoa</h2>
             <FormFicha textoBt={"Salvar"} handleSubmit={submit}/>
         </div>
     )

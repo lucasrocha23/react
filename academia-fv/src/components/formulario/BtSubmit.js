@@ -1,9 +1,9 @@
 import styles from './BtSubmit.module.css'
 
-function BtSubmit({ texto }){
+function BtSubmit({ texto, disabled }){
     return(
         <div>
-            <button className={styles.bt}>{texto}</button>
+            <button className={styles.bt} disabled={disabled}>{texto}</button>
         </div>
     )
 }
