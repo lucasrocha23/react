@@ -17,8 +17,12 @@
     height: 2.5em;
 }
 
-.bt_edita:hover{
+.bt:hover{
     color:  #ff0009;
+}
+
+.bt{
+    margin-left: 1em;
 }
 
 .ficha_info{
