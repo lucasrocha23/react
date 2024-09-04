@@ -1,0 +1,323 @@
+{
+  "salas": [
+    {
+      "id": "1724836586907",
+      "cod": "abcd000",
+      "nome": "sala 1",
+      "funcionario": "1724836891561",
+      "estado": "1"
+    },
+    {
+      "id": "1724836687377",
+      "cod": "abcd001",
+      "nome": "sala 2",
+      "funcionario": "1724836838803",
+      "estado": "1"
+    },
+    {
+      "id": "1724836704165",
+      "cod": "abcd002",
+      "nome": "sala 3",
+      "funcionario": "",
+      "estado": "0"
+    },
+    {
+      "cod": "abcd003",
+      "nome": "Laboratório de eletrônica analógica I",
+      "funcionario": "1724836969622",
+      "id": "1724836704166",
+      "estado": "1"
+    },
+    {
+      "cod": "abcd004",
+      "nome": "Laboratório de Computação III",
+      "funcionario": "1724836919783",
+      "id": "1724836778742",
+      "estado": "1"
+    },
+    {
+      "id": "1724836813709",
+      "cod": "abcd005",
+      "nome": "sala 4",
+      "funcionario": "",
+      "estado": "0"
+    },
+    {
+      "id": "1724837296518",
+      "cod": "abcd006",
+      "nome": "Laboratório de eletrônica digital",
+      "funcionario": "",
+      "estado": "0"
+    },
+    {
+      "id": "1724980494473",
+      "cod": "1724980493086",
+      "nome": "nova Sala",
+      "funcionario": "",
+      "estado": "0"
+    },
+    {
+      "id": "1725033344832",
+      "cod": "1725033343828",
+      "nome": "nova sala II",
+      "funcionario": "",
+      "estado": "0"
+    }
+  ],
+  "funcionarios": [
+    {
+      "cod": "0000",
+      "nome": "Lucas Rocha do Ó Lira Lins Lima",
+      "sala": "1724836687377",
+      "id": "1724836838803",
+      "estado": "1"
+    },
+    {
+      "id": "1724836891561",
+      "cod": "0001",
+      "nome": "Antônio Severino Caco",
+      "sala": "1724836586907",
+      "estado": "1"
+    },
+    {
+      "id": "1724836919783",
+      "cod": "0002",
+      "nome": "Miguel Campos Lemos",
+      "sala": "1724836778742",
+      "estado": "1"
+    },
+    {
+      "cod": "0003",
+      "nome": "Astuperval Silveira da Mata",
+      "sala": "",
+      "id": "1724836939846",
+      "estado": "0"
+    },
+    {
+      "cod": "0004",
+      "nome": "Friloy Barros Silva",
+      "sala": "1724836704166",
+      "id": "1724836969622",
+      "estado": "1"
+    },
+    {
+      "id": "1724837039463",
+      "cod": "0005",
+      "nome": "Marcos Gomes Costa",
+      "sala": "",
+      "estado": "0"
+    },
+    {
+      "cod": "0007",
+      "nome": "Icaro Marques Santos",
+      "sala": "",
+      "id": "1724837219883",
+      "estado": "0"
+    },
+    {
+      "id": "1724980519073",
+      "cod": "1724980517942",
+      "nome": "Trivulo Almeida",
+      "sala": "",
+      "estado": "0"
+    },
+    {
+      "id": "1724980544955",
+      "cod": "1724980543953",
+      "nome": "Naim Campos",
+      "sala": "",
+      "estado": "0"
+    },
+    {
+      "id": "1724980569079",
+      "cod": "1724980568406",
+      "nome": "Marluce Souza",
+      "sala": "",
+      "estado": "0"
+    }
+  ],
+  "emprestimos-abertos": [
+    {
+      "id": "1724895165378",
+      "dataInicio": "28/08/2024",
+      "dataFim": "",
+      "hrInicio": "22:32:45",
+      "hrFim": "",
+      "idSala": "1724836687377",
+      "idFunc": "1724836838803",
+      "concluido": "0"
+    },
+    {
+      "id": "1724902006823",
+      "dataInicio": "29/08/2024",
+      "dataFim": "",
+      "hrInicio": "00:26:46",
+      "hrFim": "",
+      "idSala": "1724836778742",
+      "idFunc": "1724836919783",
+      "concluido": "0"
+    },
+    {
+      "id": "1724980478517",
+      "dataInicio": "29/08/2024",
+      "dataFim": "",
+      "hrInicio": "22:14:38",
+      "hrFim": "",
+      "idSala": "1724836586907",
+      "idFunc": "1724836891561",
+      "concluido": "0"
+    },
+    {
+      "id": "1724982357820",
+      "dataInicio": "29/08/2024",
+      "dataFim": "",
+      "hrInicio": "22:45:57",
+      "hrFim": "",
+      "idSala": "1724836704166",
+      "idFunc": "1724836969622",
+      "concluido": "0"
+    }
+  ],
+  "historico": [
+    {
+      "id": "1724895165378",
+      "dataInicio": "28/08/2024",
+      "dataFim": "",
+      "hrInicio": "22:32:45",
+      "hrFim": "",
+      "idSala": "1724836687377",
+      "idFunc": "1724836838803",
+      "concluido": "0"
+    },
+    {
+      "id": "1724895180548",
+      "dataInicio": "28/08/2024",
+      "dataFim": "28/08/2024",
+      "hrInicio": "22:33:00",
+      "hrFim": "23:30:29",
+      "idSala": "1724836778742",
+      "idFunc": "1724836891561",
+      "concluido": "1"
+    },
+    {
+      "id": "1724895220209",
+      "dataInicio": "28/08/2024",
+      "dataFim": "28/08/2024",
+      "hrInicio": "22:33:40",
+      "hrFim": "23:40:26",
+      "idSala": "1724836586907",
+      "idFunc": "1724836919783",
+      "concluido": "1"
+    },
+    {
+      "id": "1724895250091",
+      "dataInicio": "28/08/2024",
+      "dataFim": "04/09/2024",
+      "hrInicio": "22:34:10",
+      "hrFim": "15:54:11",
+      "idSala": "1724836813709",
+      "idFunc": "1724836939846",
+      "concluido": "1"
+    },
+    {
+      "id": "1724895609687",
+      "dataInicio": "28/08/2024",
+      "dataFim": "29/08/2024",
+      "hrInicio": "22:40:09",
+      "hrFim": "06:17:07",
+      "idSala": "1724836704166",
+      "idFunc": "1724836969622",
+      "concluido": "1"
+    },
+    {
+      "id": "1724901815567",
+      "dataInicio": "29/08/2024",
+      "dataFim": "29/08/2024",
+      "hrInicio": "00:23:35",
+      "hrFim": "00:38:32",
+      "idSala": "1724837296518",
+      "idFunc": "1724837039463",
+      "concluido": "1"
+    },
+    {
+      "id": "1724902006823",
+      "dataInicio": "29/08/2024",
+      "dataFim": "",
+      "hrInicio": "00:26:46",
+      "hrFim": "",
+      "idSala": "1724836778742",
+      "idFunc": "1724836919783",
+      "concluido": "0"
+    },
+    {
+      "id": "1724922691509",
+      "dataInicio": "29/08/2024",
+      "dataFim": "29/08/2024",
+      "hrInicio": "06:11:31",
+      "hrFim": "06:14:18",
+      "idSala": "1724836586907",
+      "idFunc": "1724836891561",
+      "concluido": "1"
+    },
+    {
+      "id": "1724931317444",
+      "dataInicio": "29/08/2024",
+      "dataFim": "29/08/2024",
+      "hrInicio": "08:35:17",
+      "hrFim": "08:36:47",
+      "idSala": "1724836586907",
+      "idFunc": "1724836969622",
+      "concluido": "1"
+    },
+    {
+      "id": "1724970429601",
+      "dataInicio": "29/08/2024",
+      "dataFim": "29/08/2024",
+      "hrInicio": "19:27:09",
+      "hrFim": "19:28:11",
+      "idSala": "1724836586907",
+      "idFunc": "1724836891561",
+      "concluido": "1"
+    },
+    {
+      "id": "1724980478517",
+      "dataInicio": "29/08/2024",
+      "dataFim": "",
+      "hrInicio": "22:14:38",
+      "hrFim": "",
+      "idSala": "1724836586907",
+      "idFunc": "1724836891561",
+      "concluido": "0"
+    },
+    {
+      "id": "1724982357820",
+      "dataInicio": "29/08/2024",
+      "dataFim": "",
+      "hrInicio": "22:45:57",
+      "hrFim": "",
+      "idSala": "1724836704166",
+      "idFunc": "1724836969622",
+      "concluido": "0"
+    },
+    {
+      "id": "1725033757166",
+      "dataInicio": "30/08/2024",
+      "dataFim": "30/08/2024",
+      "hrInicio": "13:02:37",
+      "hrFim": "13:03:25",
+      "idSala": "1724836704165",
+      "idFunc": "1724837039463",
+      "concluido": "1"
+    },
+    {
+      "id": "1725327889616",
+      "dataInicio": "02/09/2024",
+      "dataFim": "02/09/2024",
+      "hrInicio": "22:44:49",
+      "hrFim": "22:45:12",
+      "idSala": "1724837296518",
+      "idFunc": "1724837219883",
+      "concluido": "1"
+    }
+  ]
+}

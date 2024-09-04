@@ -1,0 +1,23 @@
+.container-navBar{
+    background-color: #191919; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.container-navBar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.container-navBar a{
+    text-decoration: none;
+    color: white;
+}
+
+.container-navBar a:hover{
+    color: #f9ca24;
+}

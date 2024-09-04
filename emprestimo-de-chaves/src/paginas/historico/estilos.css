@@ -1,0 +1,43 @@
+.container-historico{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-historico .cabecalho{
+    display: flex;
+    gap: 30px;
+}
+
+.container-historico .cabecalho .filtro{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.container-historico .cabecalho .filtro input,
+.container-historico .cabecalho .filtro select{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    border: solid 1px #c5c5c5;
+}
+
+.container-historico .cabecalho .filtro input:focus,
+.container-historico .cabecalho .filtro select:focus{
+    outline: none;
+}
+
+.container-cards-historico{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.paginacao{
+    position: relative;
+    bottom: 0;
+}
+

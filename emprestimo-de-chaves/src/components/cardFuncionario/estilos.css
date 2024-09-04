@@ -1,0 +1,118 @@
+.container-cardFunc{
+    box-shadow: 3px 3px 10px rgba(107, 107, 107, 0.3);
+    border-radius: 10px;
+    /* width: 360px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.card-cabecalho{
+    background-color: #e7e7e7;
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.container-cardFunc h3{
+    text-align: center;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.container-conteudo {
+    width: 100%;
+    align-self: flex-start;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-conteudo span{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.container-conteudo p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 340px;
+    gap: 5px;
+    margin: 0;
+}
+
+.container-conteudo .estado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.semChave{
+    display: block;
+    background-color: rgb(37, 248, 178);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.comChave{
+    display: block;
+    background-color: rgb(252, 98, 98);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.linha{
+    display: flex;
+    flex-direction: row;
+    left: 20px;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+
+.conteudo-direita{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.pontos-verticais{
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.container-opcoes{
+    position: absolute;
+    box-shadow: 3px 3px 10px rgba(107, 107, 107, 0.3);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-opcoes button{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
