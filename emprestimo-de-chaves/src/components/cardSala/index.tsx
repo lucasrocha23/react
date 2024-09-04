@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { TbDotsVertical } from "react-icons/tb";
 import { FiEdit2, FiTrash2} from "react-icons/fi"
 import axios from 'axios'
@@ -20,11 +20,11 @@ interface Funcionario{
 
 interface CardProps{
     sala: Sala
-    setNome: React.Dispatch<React.SetStateAction<{}>>
-    setId: React.Dispatch<React.SetStateAction<{}>>
-    setCodSala: React.Dispatch<React.SetStateAction<{}>>
-    setModalEditVisivel: React.Dispatch<React.SetStateAction<{}>>
-    setModalDelVisivel: React.Dispatch<React.SetStateAction<{}>>
+    setNome: React.Dispatch<React.SetStateAction<string>>
+    setId: React.Dispatch<React.SetStateAction<string>>
+    setCodSala: React.Dispatch<React.SetStateAction<string>>
+    setModalEditVisivel: React.Dispatch<React.SetStateAction<boolean>>
+    setModalDelVisivel: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function CardSala({sala,setNome, setId, setCodSala,setModalEditVisivel, setModalDelVisivel}: CardProps){
@@ -59,7 +59,7 @@ function CardSala({sala,setNome, setId, setCodSala,setModalEditVisivel, setModal
         }
     }
 
-    function abrirOpcoes(e){
+    function abrirOpcoes(){
         setOpcoes(true)
     }
 
@@ -94,7 +94,7 @@ function CardSala({sala,setNome, setId, setCodSala,setModalEditVisivel, setModal
                             }}><FiTrash2/></button>
                         </div>
                     :
-                    <button className='pontos-verticais' onClick={(event) => abrirOpcoes(event)}><TbDotsVertical/></button>
+                    <button className='pontos-verticais' onClick={() => abrirOpcoes()}><TbDotsVertical/></button>
                     }
                 </div> 
                 </div>
