@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { IoMdStar,IoMdStarHalf, IoMdStarOutline  } from "react-icons/io";
 
@@ -74,11 +74,13 @@ function Produto(){
     const [modalSairVisivel, setModalSairVisivel] = useState(false)
 
     const {pesquisa,setPesquisa} = usePesquisa()
-    const {username, setUsername, setEmail, setToken} = useAuth()
+    const {username, token, setUsername, setEmail, setToken} = useAuth()
 
-    // useEffect(()=>{
-    //     getProduto()
-    // },[params.id])
+    useEffect(()=>{
+        if(!token){
+            navigate('/DummyProds/')
+        }
+    },[token])
 
     const {data: produto,isLoading} = useQuery({
         queryKey: ['produtos',params.id],

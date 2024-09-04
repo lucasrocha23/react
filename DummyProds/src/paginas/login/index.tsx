@@ -48,7 +48,7 @@ function Login(){
         <div className='container-login'>
             <h1>Bem vindo ao DummyProds!</h1>
             <form action="post" className='form-login' onSubmit={logar}>
-                <input type="text" placeholder='Email' onChange={(event) => setEmailInput(event.target.value)}/>
+                <input type="text" placeholder='Nome de usuário' onChange={(event) => setEmailInput(event.target.value)}/>
                 <input type="password" placeholder='Senha' onChange={(event) => setSenha(event.target.value)}/>
                 <button className='bt-entrar'>ENTRAR</button>
             </form>

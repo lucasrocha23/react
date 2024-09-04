@@ -23,7 +23,7 @@ interface Produto{
 const ITENS_P_PAGINA = 20
 
 function Inicial(){
-    const {username, setEmail,setToken,setUsername} = useAuth()
+    const {username, token, setEmail,setToken,setUsername} = useAuth()
     const {pesquisa,setPesquisa} = usePesquisa()
 
     const [produtos, setProdutos] = useState<Produto[]>([])
@@ -47,6 +47,12 @@ function Inicial(){
         getCategorias()
      
     },[])
+
+    useEffect(()=>{
+        if(!token){
+            navigate('/DummyProds/')
+        }
+    },[token])
 
     function alterarPag(pag: number){
         setPagina(pag)        
@@ -124,6 +130,8 @@ function Inicial(){
                 <h1 onClick={() => {
                     getProdutos('','','',1)
                     setPesquisa('')
+                    setCategoria('')
+                    setOrdenacao('')
                 }}>DummyProds</h1>
                 <div className="pesquisa">
                     <form action="POST" onSubmit={submit}>
