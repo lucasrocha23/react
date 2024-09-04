@@ -19,7 +19,7 @@ interface CardProps{
 
 
 function CardProduto({produto}: CardProps){
-    const [precoDescontado, setPrecoDescontado] = useState(calculaDesconto())
+    const [precoDescontado] = useState(calculaDesconto())
 
     const [estilo,setEstilo] = useState<React.CSSProperties>()
 

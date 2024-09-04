@@ -5,7 +5,7 @@ import './estilos.css'
 import CardProduto from "../../components/cardProduto";
 import Paginacao from "../../components/paginacao";
 import { usePesquisa } from "../../hooks/usePesquisa";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LiaSearchSolid } from "react-icons/lia";
 import Modal from "../../components/modal";
 
@@ -100,7 +100,7 @@ function Inicial(){
         setOrdenacao('')
     }
     
-    function submit(e){
+    function submit(e: React.FormEvent<HTMLFormElement>){
         console.log('entrou');
         
         e.preventDefault()

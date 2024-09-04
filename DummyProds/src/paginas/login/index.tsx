@@ -17,7 +17,7 @@ function Login(){
     const [duracao, setDuracao] = useState(3000)
     const [tipo, setTipo] = useState('')
 
-    async function logar(e){
+    async function logar(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault()
 
         fetch('https://dummyjson.com/auth/login', {
@@ -33,6 +33,7 @@ function Login(){
                 if (dados?.message === 'Invalid credentials'){
                     setNotificacao('Usuário ou senha inválido')
                     setTipo('falha')
+                    setDuracao(3000)
                 }
                 else{
                     setEmail(dados.email)

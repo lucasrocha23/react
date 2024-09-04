@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { IoMdStar,IoMdStarHalf, IoMdStarOutline  } from "react-icons/io";
 
@@ -129,7 +129,7 @@ function Produto(){
         });
     }
 
-    function submit(e){
+    function submit(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault()
         navigate('/listaProdutos')
     }

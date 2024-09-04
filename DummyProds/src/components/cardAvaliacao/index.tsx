@@ -17,7 +17,7 @@ interface Cardprops{
 }
 
 function CardAvaliacao({avaliacao}: Cardprops){
-    const [data, setData] = useState(new Date(avaliacao.date))
+    const [data] = useState(new Date(avaliacao.date))
 
     return(
         <div className='container-card-avaliacao'>
