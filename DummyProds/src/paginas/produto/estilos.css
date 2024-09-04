@@ -1,0 +1,473 @@
+.container-produto{
+    /* height: 100%; */
+    background-color: rgb(236, 236, 236);
+}
+
+
+.container-produto .container-cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    background-color: rgb(49, 66, 73);
+    color: white;
+}
+
+.container-produto .container-cabecalho h1{
+    cursor: pointer;
+}
+
+.container-produto .container-cabecalho .pesquisa input{
+    background-color: inherit;
+    border: none;
+    border-bottom: solid 1px rgb(255, 255, 255);
+    padding: 5px 10px;
+    color: white;
+    width: 300px;
+}
+
+.container-produto .container-cabecalho .pesquisa input:focus{
+    outline: none;
+}
+
+.container-produto .container-cabecalho .pesquisa form{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: red; */
+    flex-direction: row;
+}
+
+.container-produto .container-cabecalho .pesquisa button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.container-produto .container-cabecalho .pesquisa button:hover{
+    background-color:  rgb(41, 55, 61);
+}
+
+
+.container-produto .container-cabecalho ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.container-produto .container-cabecalho .bt-sair{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: inherit;
+    color: white;
+}
+
+.container-produto .container-cabecalho .bt-sair:hover{
+    background-color: rgb(41, 55, 61);
+}
+
+
+@media screen and (max-width: 890px) {
+    .container-produto .container-cabecalho .pesquisa input{
+        width: 200px;
+    }
+    .container-produto .container-cabecalho h1{
+        font-size: 1.3rem;
+    }
+}
+
+.container-conteudo-produto{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-infoGerais{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+    border-bottom: solid 1px rgb(148, 148, 148);
+    padding-bottom: 30px;
+    /* background-color: blue; */
+}
+
+/* =========================== COLUNA FOTOS ========================= */
+.container-infoGerais .coluna-fotos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+}
+
+.container-infoGerais .container-fotos{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.container-infoGerais .coluna-fotos .imgPrincipal{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blueviolet; */
+    gap: 10px;
+}
+
+.container-infoGerais .coluna-fotos .imgPrincipal img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container-infoGerais .coluna-fotos .imagens{
+    /* background-color: aqua; */
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-infoGerais .coluna-fotos .imagens .miniatura{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: solid 1px rgb(148, 148, 148);
+    border-radius: 5px;
+}
+
+.container-infoGerais .coluna-fotos .imagens .miniatura img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container-infoGerais .coluna-fotos .imagens .miniatura:hover{
+    outline: auto;
+}
+
+/* =========================== COlUNA INFO ========================= */
+.container-infoGerais .coluna-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 5px;
+    /* background-color: aquamarine; */
+}
+
+
+.container-infoGerais .coluna-info .avaliacoes{
+    display: flex;
+}
+
+.container-infoGerais .coluna-info .avaliacoes h4{
+    margin-left: 10px;
+}
+
+.container-infoGerais .coluna-info .preco{
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 1.8rem;
+}
+
+.container-infoGerais .coluna-info .preco-original{
+    margin-left: 10px;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.container-infoGerais .coluna-info .disc-porcentagem{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d3031c;
+}
+
+
+/* =========================== COlUNA COMPRA ========================= */
+.container-infoGerais .coluna-compra{
+    display: flex;
+    /* background-color: bisque; */
+    justify-content: center;
+}
+
+.container-infoGerais .coluna-compra .container-compra{
+    border: solid 1px rgb(148, 148, 148);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 255px;
+    /* height: 100%; */
+}
+
+.container-infoGerais .coluna-compra .quantidade{
+    display: flex;
+    gap: 10px;
+}
+
+.container-infoGerais .coluna-compra .quantidade span{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(196, 196, 196);
+    font-size: 0.5rem;
+    cursor: pointer;
+}
+
+.container-infoGerais .coluna-compra .quantidade span:hover{
+    background-color: rgb(184, 184, 184);
+}
+
+
+.container-infoGerais .coluna-compra .botoes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-infoGerais .coluna-compra .botoes button{
+    padding: 5px 0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.coluna-compra .bt-comprar{
+    color: white;
+    background-color: rgb(49, 66, 73);
+}
+
+.coluna-compra .bt-comprar:hover{
+    background-color: rgb(41, 55, 61);
+}
+
+
+.coluna-compra .bt-addcarrinho{
+    color: white;
+    background-color: rgb(100, 135, 149);
+}
+
+.coluna-compra .status-disp{
+    font-size: 1.8rem;
+    color: #5aff79;
+    font-weight: bold;
+}
+
+.coluna-compra .status-indisp{
+    font-size: 1.8rem;
+    color: #d3031c;
+    font-weight: bold;
+}
+
+/* ============================ AVALIACOES ========================== */
+.container-conteudo-avaliacoes{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px rgb(148, 148, 148);
+}
+
+.container-conteudo-avaliacoes .avaliacoes-linha{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-conteudo-avaliacoes .avaliacoes-linha .avaliacoes-col1{
+    background-color: #f8f8f8;
+    width: 49%;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.8rem;
+}
+
+.container-conteudo-avaliacoes .avaliacoes-linha .avaliacoes-col2{
+    background-color: #f8f8f8;
+    width: 49%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-conteudo-avaliacoes .estrelas{
+    color: #ffc50a;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container-conteudo-avaliacoes .avaliacoes-col2 .linha{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.container-conteudo-avaliacoes .avaliacoes-col2 .linha .separador{
+    flex-grow: 1;
+    height: 4px;
+    background-color: rgb(211, 211, 211);
+    margin: 0 10px;
+}
+
+.container-conteudo-avaliacoes .avaliacoes-col2 .linha p{
+    width: 110px;
+    display: flex;
+}
+
+.container-conteudo-avaliacoes .container-cards-avaliacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ======================= INFO DETALHADA ========================== */
+.container-infoDetalhadas{
+    margin-top: 50px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px rgb(148, 148, 148);
+}
+
+.container-infoDetalhadas .descricao{
+    margin: 20px 0;
+}
+
+.container-infoDetalhadas h2{
+    margin-top: 20px;
+}
+
+.container-infoDetalhadas .imagens{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 5px; */
+}
+
+.container-infoDetalhadas .imagens .img{
+    width: 760px;
+    height: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.container-infoDetalhadas .imagens .img img{
+    max-width: 100%;
+    max-height: 100%;
+    /* background-color: #d3031c; */
+}
+
+
+/* ============================ RECOMENDAÇÕES========================= */
+.container-recomendacoes{
+    margin-top: 50px;
+}
+
+.nav-cards-recomendacoes{
+    overflow: auto;
+    padding: 20px 0;
+}
+
+/* .nav-cards-recomendacoes::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
+} */
+
+.nav-cards-recomendacoes ul{
+    display: flex;
+    gap: 20px
+}
+
+.nav-cards-recomendacoes ul li{
+    list-style: none;
+}
+
+
+/* ================= carregamento ============================ */
+.container-carregamento{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+}
+
+.carregando {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid rgb(41, 55, 61);
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+  
+  /* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+
+  /* ======================== SAIR ========================== */
+.container-sair{
+    background-color: rgb(236, 236, 236);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container-sair .botoes{
+    display: flex;
+    gap: 10px;
+}
+
+.container-sair .bt-sim{
+    background-color: rgb(41, 55, 61);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-sair .bt-nao{
+    background-color: rgb(100, 135, 149);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

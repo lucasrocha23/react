@@ -1,0 +1,33 @@
+.container-card-avaliacao{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgb(148, 148, 148);
+    border-radius: 10px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.container-card-avaliacao .cabecalho{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.container-card-avaliacao .cabecalho .perfil{
+    font-size: 3rem;
+    color: rgb(114, 114, 114);
+}
+
+
+.container-card-avaliacao .cabecalho .estrelas{
+    color: #ffc50a;
+    font-size: 1.5rem;
+}
+
+.container-card-avaliacao .comentario{
+    font-size: 1.3rem;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
