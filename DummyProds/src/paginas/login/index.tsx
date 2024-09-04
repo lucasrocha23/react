@@ -39,7 +39,7 @@ function Login(){
                     setEmail(dados.email)
                     setUsername(dados.username)
                     setToken(dados.token)
-                    navigate('/listaProdutos')
+                    navigate('/DummyProds/listaProdutos')
                 }
             })
     }

@@ -89,7 +89,7 @@ function Produto(){
         Produto){
         const desconto = prod.price * prod.discountPercentage / 100
 
-        const precoFinal = (prod.price - desconto).toFixed(2)
+        const precoFinal = Number((prod.price - desconto).toFixed(2))
         return precoFinal
     }
 
@@ -131,7 +131,7 @@ function Produto(){
 
     function submit(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault()
-        navigate('/listaProdutos')
+        navigate('/DummyProds/listaProdutos')
     }
 
     function sairDaConta(){
@@ -139,7 +139,7 @@ function Produto(){
         setEmail('')
         setUsername('')
         setToken('')
-        navigate('/')
+        navigate('/DummyProds/')
     }
 
     if (isLoading){
@@ -157,7 +157,7 @@ function Produto(){
             <div className="container-cabecalho">
                 <h1 onClick={() => {
                     setPesquisa('')
-                    navigate('/listaProdutos')
+                    navigate('/DummyProds/listaProdutos')
                 }}>DummyProds</h1>
                 <div className="pesquisa">
                     <form action="POST" onSubmit={submit}>

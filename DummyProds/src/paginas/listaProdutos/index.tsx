@@ -115,7 +115,7 @@ function Inicial(){
         setEmail('')
         setUsername('')
         setToken('')
-        navigate('/')
+        navigate('/DummyProds/')
     }
 
     return(

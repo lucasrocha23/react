@@ -43,7 +43,7 @@ function CardProduto({produto}: CardProps){
     }
 
     return(
-        <div className="card-produto" onClick={() => {navigate(`/produto/${produto.id}`)}} style={estilo}>
+        <div className="card-produto" onClick={() => {navigate(`/DummyProds/produto/${produto.id}`)}} style={estilo}>
             <div className='img'>
                 <img src={produto.thumbnail}/>
 
