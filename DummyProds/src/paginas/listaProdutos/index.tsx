@@ -4,10 +4,9 @@ import { useAuth } from "../../hooks/useAuth"
 import './estilos.css'
 import CardProduto from "../../components/cardProduto";
 import Paginacao from "../../components/paginacao";
-import { usePesquisa } from "../../hooks/usePesquisa";
-import { useNavigate } from "react-router-dom";
-import { LiaSearchSolid } from "react-icons/lia";
-import Modal from "../../components/modal";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import Cabecalho from "../../components/cabecalho";
+import { useQuery } from "@tanstack/react-query";
 
 
 interface Produto{
@@ -23,29 +22,56 @@ interface Produto{
 const ITENS_P_PAGINA = 20
 
 function Inicial(){
-    const {username, token, setEmail,setToken,setUsername} = useAuth()
-    const {pesquisa,setPesquisa} = usePesquisa()
+    const {token} = useAuth()
 
-    const [produtos, setProdutos] = useState<Produto[]>([])
     const [categorias, setCategorias] = useState<string[]>([])
-    const [categoria, setCategoria] = useState('')
-    const [ordenacao, setOrdenacao] = useState('')
-    const [pagina,setPagina] = useState(1)
-    const [ultimaPag, setUlimaPag] = useState(0)
-    const [url,setUrl] = useState('')
 
-    const [modalSairVisivel, setModalSairVisivel] = useState(false)
+    const [ultimaPag, setUlimaPag] = useState(0)
+
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const pesquisa = searchParams.get('pesquisa')? String(searchParams.get('pesquisa')) : '' 
+    const categoria = searchParams.get('categoria')? String(searchParams.get('categoria')) : ''
+    const ordenacao = searchParams.get('ordenacao')? String(searchParams.get('ordenacao')) : ''
+    const pagina = searchParams.get('pagina')? String(searchParams.get('pagina')) : ''
 
     const navigate = useNavigate()
 
-    useEffect(() => {        
-        if(pesquisa){         
-            realizarPesquisa()
-        }else{
-            getProdutos('','','',1)
-        }    
+   
+    const {data: produtos ,isLoading} = useQuery <Produto[]>({
+        queryKey: ['pegarListaProdutos', pesquisa, ordenacao, categoria,pagina],
+        queryFn: async () => {
+
+            var filtroCategoria = ''
+            var filtroOrdenacao = ''
+            var urlBase = 'https://dummyjson.com/products'
+
+            if (categoria){
+                filtroCategoria = `/category/${categoria}`
+            }
+
+            if (ordenacao){
+                filtroOrdenacao = `sortBy=price&order=${ordenacao}`
+            } 
+
+            var urlFinal = ''
+            if (pesquisa){
+                urlFinal = `https://dummyjson.com/products/search?q=${pesquisa}&${filtroOrdenacao}&limit=${ITENS_P_PAGINA}&skip=${(Number(pagina) -1)*ITENS_P_PAGINA}`
+            }else {
+                urlFinal = `${urlBase}${filtroCategoria}?${filtroOrdenacao}&limit=${ITENS_P_PAGINA}&skip=${(Number(pagina)-1)*ITENS_P_PAGINA}` 
+            }
+            
+            const resposta = await fetch(urlFinal)
+            const dados = await resposta.json()
+
+            setUlimaPag(Math.ceil(dados.total/ITENS_P_PAGINA))
+
+            return dados.products
+        }
+    })
+
+     useEffect(() => {        
         getCategorias()
-     
     },[])
 
     useEffect(()=>{
@@ -53,11 +79,6 @@ function Inicial(){
             navigate('/DummyProds/')
         }
     },[token])
-
-    function alterarPag(pag: number){
-        setPagina(pag)        
-        getProdutos(url,categoria,ordenacao,pag)
-    }
 
     async function getCategorias() {
         fetch('https://dummyjson.com/products/category-list')
@@ -67,84 +88,27 @@ function Inicial(){
         });
     }
 
-    async function getProdutos(url_: string,categoria: string, ordenacao: string, pag_: number) {
-        var filtroCategoria = ''
-        var filtroOrdenacao = ''
-        var urlBase = 'https://dummyjson.com/products'
+    function mudarPagina(pag: number){
+        setSearchParams(params => {
+            params.set('pagina', String(pag))
 
-        if (categoria){
-            filtroCategoria = `/category/${categoria}`
+            return params
+        })
+    }
+
+    if (isLoading){
+        if (isLoading){
+            return(
+                <div className="container-carregamento">
+                    <div className="carregando"></div>
+                </div>
+            )
         }
-
-        if (ordenacao){
-            filtroOrdenacao = `sortBy=price&order=${ordenacao}`
-        } 
-
-        var urlFinal = ''
-        if (url_){
-            urlFinal = `${url_}&${filtroOrdenacao}&limit=${ITENS_P_PAGINA}&skip=${(pag_ -1)*ITENS_P_PAGINA}`
-        }else {
-            urlFinal = `${urlBase}${filtroCategoria}?${filtroOrdenacao}&limit=${ITENS_P_PAGINA}&skip=${(pag_-1)*ITENS_P_PAGINA}` 
-        }
-        
-        fetch(urlFinal)
-        .then(res => res.json())
-        .then(dados => {
-            setUlimaPag(Math.ceil(dados.total/ITENS_P_PAGINA))
-            setProdutos(dados.products)
-        }); 
-    }
-
-    function realizarPesquisa(){
-        const url_ = `https://dummyjson.com/products/search?q=${pesquisa}`
-        // console.log('entrou no realizar pesquisa');
-        
-        setUrl(url_)
-        setPagina(1)
-        getProdutos(url_,'','',1)
-        setCategoria('')
-        setOrdenacao('')
-    }
-    
-    function submit(e: React.FormEvent<HTMLFormElement>){
-        console.log('entrou');
-        
-        e.preventDefault()
-        realizarPesquisa()
-    }
-
-    
-    function sairDaConta(){
-        setPesquisa('')
-        setCategoria('')
-        setOrdenacao('')
-        setEmail('')
-        setUsername('')
-        setToken('')
-        navigate('/DummyProds/')
     }
 
     return(
         <div className="container-pgInicial">
-            <div className="container-cabecalho">
-                <h1 onClick={() => {
-                    getProdutos('','','',1)
-                    setPesquisa('')
-                    setCategoria('')
-                    setOrdenacao('')
-                }}>DummyProds</h1>
-                <div className="pesquisa">
-                    <form action="POST" onSubmit={submit}>
-                        <input value={pesquisa} type="text" onChange={(event) => setPesquisa(event.target.value)}/>
-                        <button><LiaSearchSolid/></button>
-                    </form>
-                </div>
-                <ul>
-                    <li><p>Olá, {username}</p></li>
-                    <li><button className="bt-sair" onClick={() => setModalSairVisivel(true)}>SAIR</button></li>
-                </ul>
-            </div>
-
+            <Cabecalho/>
 
             <div className="container-conteudo-pgInicial">
                 <div className="cabecalho-conteudo-pgInicial">
@@ -152,9 +116,12 @@ function Inicial(){
                     <div className="filtro-ordenacao">
                         <p>Ordenar por</p>
                         <select value={ordenacao} onChange={(event) => {
-                                setOrdenacao(event.target.value)
-                                getProdutos(url,categoria,event.target.value,1)
-                                setPagina(1)
+                                setSearchParams(params => {
+                                    params.set('ordenacao', event.target.value)
+                        
+                                    return params
+                                })
+                                mudarPagina(1)
                             }}>
                             <option value="">Nenhum</option>
                             <option value="asc">Menor preço</option>
@@ -165,10 +132,13 @@ function Inicial(){
                     <div className="filtro-categoria">
                         <p>Categoria</p>
                         <select value={categoria} onChange={(event) => {
-                                setCategoria(event.target.value)
-                                getProdutos('',event.target.value,ordenacao,1)
-                                setPagina(1)
-                                setUrl('')
+                                setSearchParams(params => {
+                                    params.set('categoria', event.target.value)
+                                    params.set('pesquisa', '')
+                        
+                                    return params
+                                })
+                                mudarPagina(1)
                             }}>
                             <option value="">Nenhum</option>
                             {categorias &&
@@ -179,7 +149,7 @@ function Inicial(){
                         </select>
                     </div>
                 </div>
-                    {produtos.length > 0 ? 
+                    {produtos && produtos.length > 0 ? 
                     <div className="container-cards-pgInicial" style={{display:'grid'}}>
                             {produtos.map((prod) =>(
                                 <CardProduto produto={prod} key={`_prod_${prod.id}`}/>
@@ -190,24 +160,10 @@ function Inicial(){
                         <p style={{marginTop: '100px'}}>Sem produtos</p>
                     </div>
                     }
-                {ultimaPag !== 0 && <Paginacao pagina={pagina}  setPagina={alterarPag} ultimo={ultimaPag}/>}
+                {ultimaPag !== 0 && <Paginacao pagina={Number(pagina)}  setPagina={mudarPagina} ultimo={ultimaPag}/>}
             </div>
 
-            <Modal visivel={modalSairVisivel}>
-                <div className="container-sair">
-                    <h1>Confirmar saída</h1>
-                    <p>Você deseja realmente sair da conta?</p>
-                    <div className="botoes">
-                        <button className="bt-sim" onClick={sairDaConta}>
-                            Sim
-                        </button>
-                        <button className="bt-nao"
-                        onClick={() => setModalSairVisivel(false)}>
-                            Não
-                        </button>
-                    </div>
-                </div>
-            </Modal>
+            
         </div>
     )
 }

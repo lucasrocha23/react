@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 
@@ -11,11 +11,17 @@ function Login(){
     const [senha, setSenha] = useState('')
 
     const navigate = useNavigate()
-    const {setUsername,setEmail,setToken} = useAuth()
+    const {setUsername,setEmail,setToken,token} = useAuth()
 
     const [notificacao, setNotificacao] = useState('')
     const [duracao, setDuracao] = useState(3000)
     const [tipo, setTipo] = useState('')
+
+    useEffect(()=>{
+        if(token){
+            navigate('/DummyProds/listaProdutos')
+        }
+    },[])
 
     async function logar(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault()

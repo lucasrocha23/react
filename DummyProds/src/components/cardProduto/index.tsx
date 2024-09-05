@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './estilos.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 interface Produto{
     id: string
@@ -23,6 +23,9 @@ function CardProduto({produto}: CardProps){
 
     const [estilo,setEstilo] = useState<React.CSSProperties>()
 
+    const [searchParams] = useSearchParams()
+    const pesquisa = searchParams.get('pesquisa')? String(searchParams.get('pesquisa')) : ''
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -43,7 +46,7 @@ function CardProduto({produto}: CardProps){
     }
 
     return(
-        <div className="card-produto" onClick={() => {navigate(`/DummyProds/produto/${produto.id}`)}} style={estilo}>
+        <div className="card-produto" onClick={() => {navigate(`/DummyProds/produto/${produto.id}?pesquisa=${pesquisa}`)}} style={estilo}>
             <div className='img'>
                 <img src={produto.thumbnail}/>
 

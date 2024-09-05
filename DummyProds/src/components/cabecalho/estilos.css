@@ -1,0 +1,117 @@
+.container-cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    background-color: rgb(49, 66, 73);
+    color: white;
+}
+
+
+.container-cabecalho h1{
+    cursor: pointer;
+}
+
+.container-cabecalho .pesquisa input{
+    background-color: inherit;
+    border: none;
+    border-bottom: solid 1px rgb(255, 255, 255);
+    padding: 5px 10px;
+    color: white;
+    width: 300px;
+}
+
+.container-cabecalho .pesquisa input:focus{
+    outline: none;
+}
+
+.container-cabecalho .pesquisa form{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: red; */
+    flex-direction: row;
+}
+
+.container-cabecalho .pesquisa button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.container-cabecalho .pesquisa button:hover{
+    background-color:  rgb(41, 55, 61);
+}
+
+
+.container-cabecalho ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.container-cabecalho .bt-sair{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: inherit;
+    color: white;
+}
+
+.container-cabecalho .bt-sair:hover{
+    background-color: rgb(41, 55, 61);
+}
+
+
+@media screen and (max-width: 890px) {
+    .container-cabecalho .pesquisa input{
+        width: 200px;
+    }
+    .container-cabecalho h1{
+        font-size: 1.3rem;
+    }
+}
+
+.container-sair{
+    background-color: rgb(236, 236, 236);
+    color: #000;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container-sair .botoes{
+    display: flex;
+    gap: 10px;
+}
+
+.container-sair .bt-sim{
+    background-color: rgb(41, 55, 61);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-sair .bt-nao{
+    background-color: rgb(100, 135, 149);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

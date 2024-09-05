@@ -3,14 +3,12 @@ import { useEffect, useState } from "react"
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { IoMdStar,IoMdStarHalf, IoMdStarOutline  } from "react-icons/io";
 
-import './estilos.css'
-import { usePesquisa } from "../../hooks/usePesquisa";
-import { LiaSearchSolid } from "react-icons/lia";
 import { useAuth } from "../../hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
 import CardAvaliacao from "../../components/cardAvaliacao";
 import CardProduto from "../../components/cardProduto";
-import { useQuery } from "@tanstack/react-query";
-import Modal from "../../components/modal";
+import './estilos.css'
+import Cabecalho from "../../components/cabecalho";
 
 interface Dimensions{
     width:number
@@ -61,7 +59,6 @@ function Produto(){
     const params = useParams()
     const navigate = useNavigate()
 
-    // const [produto, setProduto] = useState<produto>()
     const [precoDescontado, setPrecoDescontado] = useState(0)
 
     const [imgPrincipal, setImgPrincipal] = useState('')
@@ -71,10 +68,8 @@ function Produto(){
 
     const [recomendacoes, setRecomendacoes] = useState<Produto[]>()
 
-    const [modalSairVisivel, setModalSairVisivel] = useState(false)
 
-    const {pesquisa,setPesquisa} = usePesquisa()
-    const {username, token, setUsername, setEmail, setToken} = useAuth()
+    const {token} = useAuth()
 
     useEffect(()=>{
         if(!token){
@@ -131,19 +126,6 @@ function Produto(){
         });
     }
 
-    function submit(e: React.FormEvent<HTMLFormElement>){
-        e.preventDefault()
-        navigate('/DummyProds/listaProdutos')
-    }
-
-    function sairDaConta(){
-        setPesquisa('')
-        setEmail('')
-        setUsername('')
-        setToken('')
-        navigate('/DummyProds/')
-    }
-
     if (isLoading){
         return(
             <div className="container-carregamento">
@@ -156,22 +138,7 @@ function Produto(){
         
         <div className="container-produto">
             {produto && <div>
-            <div className="container-cabecalho">
-                <h1 onClick={() => {
-                    setPesquisa('')
-                    navigate('/DummyProds/listaProdutos')
-                }}>DummyProds</h1>
-                <div className="pesquisa">
-                    <form action="POST" onSubmit={submit}>
-                        <input value={pesquisa} type="text" onChange={(event) => setPesquisa(event.target.value)}/>
-                        <button><LiaSearchSolid/></button>
-                    </form>
-                </div>
-                <ul>
-                    <li><p>Olá, {username}</p></li>
-                    <li><button className="bt-sair" onClick={() => setModalSairVisivel(true)}>SAIR</button></li>
-                </ul>
-            </div>
+            <Cabecalho/>
 
 
             <div className="container-conteudo-produto">
@@ -412,23 +379,6 @@ function Produto(){
                 </div>
             </div>
             </div>}
-
-
-            <Modal visivel={modalSairVisivel}>
-                <div className="container-sair">
-                    <h1>Confirmar saída</h1>
-                    <p>Você deseja realmente sair da conta?</p>
-                    <div className="botoes">
-                        <button className="bt-sim" onClick={sairDaConta}>
-                            Sim
-                        </button>
-                        <button className="bt-nao"
-                        onClick={() => setModalSairVisivel(false)}>
-                            Não
-                        </button>
-                    </div>
-                </div>
-            </Modal>
         </div>
     )
 }
