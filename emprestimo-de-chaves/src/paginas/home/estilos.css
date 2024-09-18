@@ -1,0 +1,17 @@
+.container-conteudo-home{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+    margin-top: 25vh;
+    gap: 30px;
+}
+
+.container-conteudo-home .bt-emprestimos{
+    text-decoration: none;
+    background-color: #F9CA24;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
