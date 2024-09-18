@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# DummyProds
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto com intenção de aplicar novos conhecimentos adquiridos no React
 
-Currently, two official plugins are available:
+## Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este é um projeto que tenta replicar o Frontend de sites de compras como Amazon e Mercado Livre. De forma bem mais simplificada do que um site de compras real, com esse projeto temos algumas funcionalidades interessantes funcionando, entre elas podemos destacar: uma tela de autentificação, listagem e exibição dos produtos com paginação, filtragem de dados através das categorias dos produtos, ordenação dos produtos por preço (do menor ao maior, ou do maior ao menor), barra de pesquisa, página detalhada do produto, mostrando todas as informações realacionadas, seção de produtos recomendados.
 
-## Expanding the ESLint configuration
+## Base de dados
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para exibição dos produtos foi utilizada uma base de dados de uma API chamada de DummyJson, que disponibiliza uma série de dados de produtos, carrinhos de compra, usuários, postagens, listas de taferas e etc. Para mais informações acesse o link da API: https://dummyjson.com/.
 
-- Configure the top-level `parserOptions` property like this:
+Para esse projeto foi utilizada a parte de autentificação e produtos, que conta com um total de 194 produtos, dividídos em 24 categorias, e cada produto com diversas informações como especificações, fotos e avaliações
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Imagens e acesso
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+O projeto está hospedado no github pages e pode ser acessado atavrés do link: https://lucasrocha23.github.io/DummyProds
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Para acessar, as credenciais são, username: emilys e senha: emilyspass, disponibilizadas pela API DummyJson
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+A seguir temos algumas imagens que mostram as telas do projeto
+
+### Tela de autentificação
+![dummy-tela-de-autentificação](https://github.com/user-attachments/assets/56bb8aa2-f2ac-4f90-b16d-d190a43a7140)
+
+### Tela com a lista de produtos
+![dummy-tela-de-listaProdutos](https://github.com/user-attachments/assets/1f1a6838-a307-4a9f-acd8-9dbd420d0b9f)
+
+### Tela de detalhes do produto
+![dummy-tela-de-detalhesProduto](https://github.com/user-attachments/assets/a6aa06cb-6a70-442b-8df3-7e2d65507d76)
+
+# Dependências e comandos
+
+Para este projeto as bibliotecas utilizadas foram:
+- @tanstack/react-query: 5.54.1
+- react-icons: 5.3.0
+- react-router-dom: 6.26.1
+- zustand: 4.5.5
+
+Para executar o projeto localmente, no diretório do projeto, execute esse comando no termimal:
+
+### `npm run dev`
