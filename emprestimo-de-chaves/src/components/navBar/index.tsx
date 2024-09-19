@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
+import Logo from "../../assets/logo.png"
 import './estilos.css'
 
 function NavBar(){
     return(
         <div className='container-navBar'>
             <Link to={'/'}>
-                <h1>Emprestimos de chave</h1>
+                <img src={Logo} alt="logo" width={'70'}/>
             </Link>
 
             <ul>

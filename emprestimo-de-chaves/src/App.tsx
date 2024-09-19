@@ -12,11 +12,11 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path='/' element={<Home/>} ></Route>
-          <Route path='/funcionarios' element={<Funcionarios/>} ></Route>
-          <Route path='/salas' element={<Salas/>} ></Route>
-          <Route path='/emprestimos' element={<Emprestimos/>} ></Route>
-          <Route path='/historico' element={<Historico/>} ></Route>
+          <Route path='/' element={<Home/>} />
+          <Route path='/funcionarios' element={<Funcionarios/>}/>
+          <Route path='/salas' element={<Salas/>} />
+          <Route path='/emprestimos' element={<Emprestimos/>} />
+          <Route path='/historico' element={<Historico/>}/>
         </Routes>
       </BrowserRouter>  
     </div>
