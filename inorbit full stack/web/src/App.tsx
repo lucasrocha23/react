@@ -19,5 +19,9 @@ export function App() {
     )
   }
 
-  return <Dialog>{resumo?.total === 0 ? <SemObjetivos /> : <Resumo />}</Dialog>
+  return (
+    <Dialog>
+      {resumo?.total === 0 || resumo?.total === null ? <SemObjetivos /> : <Resumo />}
+    </Dialog>
+  )
 }
